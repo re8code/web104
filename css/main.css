@@ -59,11 +59,32 @@ body {
 #base>.content section article {
   width: 250px; height: 100%;
   padding: 70px 40px;
+  opacity: 0.4;
+  position: relative;
+  transition: 0.5s;
+}
+#base>.content section article::before {
+  content: ""; display: block;
+  width: 0px; height: 100%;
+  background-image: url("../images/back.png");
+  position: absolute;
+  top: 0px; left: 0px;
+}
+#base>.content section article:hover {
+  opacity: 1;
+}
+#base>.content section article:hover::before {
+  width: 250px; z-index: 1;
+  transition: 0.5s;
+}
+#base>.content section article:hover .inner {
+  z-index: 2;
 }
 #base>.content section article .inner {
   width: 170px; height: 100%;
   display: flex; flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 #base>.content section article .inner .txt {
   width: 100%; height: 100px;
@@ -80,4 +101,8 @@ body {
 }
 #base>.content section article .inner img {
   width: 100%;
+  transition: 0.5s;
+}
+#base>.content section article:hover .inner img {
+  width: 200px;
 }
