@@ -1,0 +1,38 @@
+* {
+  margin: 0px; padding: 0px;
+  box-sizing: border-box;
+  font-family: "verdana";
+}
+body {
+  display: flex;
+  justify-content: center;
+  background: lightgray;
+}
+/* base ************************************************************/
+#base {
+  width: 1280px; height: 720px;
+  background: rgb(50,50,50);
+  display: flex;
+}
+#base>div {
+  width: 280px; height: 100%;
+  display: flex; flex-direction: column;
+}
+#base>div>div { /*2개의 영역에 공통 적용*/
+  width: 100%; height: 100%; padding: 10px;
+  border-right: 2px solid darkgray; /*영역 우측 안쪽 라인 구성*/
+  display: flex; flex-direction: column; /*내부 박스 영역도 flex*/
+}
+#base>div>.title_up { /*각 영역을 커스터마이징*/
+  justify-content: center; /*박스 영역을 수직 중앙으로 배치*/
+  text-align: center; /*박스 영역 내에서 문자열을 수평 중앙으로 정렬*/
+  font: italic bold 30pt/50px times new roman;
+  color: lightgray; /*폰트 구성*/
+}
+#base>div>.title_dn { /*각 영역을 커스터마이징*/
+  padding-bottom: 20px;
+  justify-content: flex-end;
+  text-align: center;
+  font: normal 10pt/16pt verdana;
+  color: darkgray;
+}
